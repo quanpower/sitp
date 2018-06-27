@@ -8,6 +8,7 @@ __pycache__/
 
 # Distribution / packaging
 .Python
+env/
 build/
 develop-eggs/
 dist/
@@ -23,7 +24,6 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
-MANIFEST
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -45,7 +45,6 @@ nosetests.xml
 coverage.xml
 *.cover
 .hypothesis/
-.pytest_cache/
 
 # Translations
 *.mo
@@ -54,7 +53,6 @@ coverage.xml
 # Django stuff:
 *.log
 local_settings.py
-db.sqlite3
 
 # Flask stuff:
 instance/
@@ -81,14 +79,13 @@ celerybeat-schedule
 # SageMath parsed files
 *.sage.py
 
-# Environments
+# dotenv
 .env
+
+# virtualenv
 .venv
-env/
 venv/
 ENV/
-env.bak/
-venv.bak/
 
 # Spyder project settings
 .spyderproject
@@ -102,3 +99,51 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+
+
+*.pyc
+app.db
+./tmp
+./build/*
+./.idea
+./.idea/*
+
+env
+venv
+*.sublime*
+.env
+.idea
+.flaskenv
+data.sqlite
+log
+
+
+
+# For Frontend
+# >>>>>>>>>>>>
+
+
+# dependencies
+frontend/node_modules
+# roadhog-api-doc ignore
+frontend/src/utils/request-temp.js
+frontend/_roadhog-api-doc
+
+# production
+frontend/dist
+frontend/vscode
+
+# misc
+frontend/.DS_Store
+frontend/npm-debug.log*
+frontend/yarn-error.log
+
+frontend/coverage
+frontend/.idea
+frontend/yarn.lock
+frontend/package-lock.json
+frontend/*bak
+frontend/jsconfig.json
+
+#<<<<<<<<<<<<<<<
