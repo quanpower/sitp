@@ -3,7 +3,7 @@ from app import db, login_manager
 
 class Project(db.Model):
     __tablename__ = 'daq_project'
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     name = db.Column(db.String(50))
 
     def __repr__(self):
@@ -12,7 +12,7 @@ class Project(db.Model):
 
 class Worker(db.Model):
     __tablename__ = 'daq_worker'
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     name = db.Column(db.String(100))
     project_id = db.Column(db.Integer, db.ForeignKey('daq_project.id'))
     project = db.relationship("Project")
@@ -23,7 +23,7 @@ class Worker(db.Model):
 
 class Temperature(db.Model):
     __tablename__ = 'daq_temperature'
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     project_id = db.Column(db.Integer, db.ForeignKey('daq_project.id'))
     project = db.relationship("Project")
 
@@ -39,7 +39,7 @@ class Temperature(db.Model):
 
 class Power(db.Model):
     __tablename__ = 'daq_power'
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
 
     project_id = db.Column(db.Integer, db.ForeignKey('daq_project.id'))
     project = db.relationship("Project")
@@ -56,7 +56,7 @@ class Power(db.Model):
 
 class Alarm(db.Model):
     __tablename__ = 'daq_alarm'
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
 
     project_id = db.Column(db.Integer, db.ForeignKey('daq_project.id'))
     project = db.relationship("Project")
