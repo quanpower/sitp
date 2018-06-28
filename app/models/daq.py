@@ -4,7 +4,7 @@ from app import db, login_manager
 class Project(db.Model):
     __tablename__ = 'daq_project'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    name = db.Column(db.String(50))
+    name = db.Column(db.String(50), unique=True)
 
     def __repr__(self):
         return str(self.name)
@@ -13,7 +13,7 @@ class Project(db.Model):
 class Worker(db.Model):
     __tablename__ = 'daq_worker'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    name = db.Column(db.String(100))
+    name = db.Column(db.String(100), unique=True)
     project_id = db.Column(db.Integer, db.ForeignKey('daq_project.id'))
     project = db.relationship("Project")
 
