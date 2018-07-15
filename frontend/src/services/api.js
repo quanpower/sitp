@@ -78,18 +78,34 @@ export async function queryNotices() {
   return request('/api/notices');
 }
 
-export async function getCurrentPowerData() {
-  return request('/api/power/current');
+export async function queryCurrentPowerData(params) {
+  return request(`/api/power/current?${stringify(params)}`);
 }
 
-export async function getHistoryPowerData() {
-  return request('/api/power/history');
+export async function queryHistoryPowerData(params) {
+  return request(`/api/power/history?${stringify(params)}`);
 }
 
-export async function getTemperatureData() {
-  return request('/api/temperature/realtime');
+export async function queryTemperatureData(params) {
+  return request(`/api/temperature/realtime?${stringify(params)}`);
 }
 
-export async function getTemperatureHistory() {
-  return request('/api/temperature/history');
+export async function queryTemperatureAlarm(params) {
+  return request(`/api/temperature/alarm?${stringify(params)}`);
+}
+
+export async function queryTemperatureHistory(params) {
+  return request(`/api/temperature/history?${stringify(params)}`);
+}
+
+export async function queryTemperatureRecord(params) {
+  return request(`/api/temperature/record?${stringify(params)}`);
+}
+
+export async function queryProjects() {
+  return request('/api/projects');
+}
+
+export async function queryWorkers(params) {
+  return request(`/api/workers?${stringify(params)}`);
 }
