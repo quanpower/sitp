@@ -265,11 +265,10 @@ class TemperatureAlarm(Resource):
 
         alarm_dict_list = []
         for temp_alarm in temp_alarms:
-            print(temp_alarm[1])
-            if temp_alarm[1] == '1':
+            if temp_alarm[1] == '0':
                 alarm_dict = {'type': 'danger', 'icon':'warning', 'channel': temp_alarm[0], 'alarm': temp_alarm[1]}
             else:
-                alarm_dict = {'type': 'dashed', 'icon':'sync', 'channel': temp_alarm[0], 'alarm': temp_alarm[1]}
+                alarm_dict = {'type': 'primary', 'icon':'sync', 'channel': temp_alarm[0], 'alarm': temp_alarm[1]}
 
             alarm_dict_list.append(alarm_dict)
 
